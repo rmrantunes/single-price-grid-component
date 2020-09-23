@@ -1,12 +1,17 @@
 $cyan: hsl(179, 62%, 43%);
+$cyan-light: hsl(179, 47%, 52%);
 $yellow: hsl(71, 73%, 54%);
+$yellow-hover: hsl(71, 59%, 54%);
 $light-gray: hsl(204, 43%, 93%);
 $grayish-blue: hsl(218, 22%, 67%);
+$white: #fff;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  list-style: none;
 }
 
 body {
@@ -17,4 +22,116 @@ body {
   justify-content: center;
 
   background-color: $light-gray;
+  font-family: "Karla", sans-serif;
+
+  padding: 0 20px;
+}
+
+.card {
+  width: 640px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0px 10px 15px 10px rgba(131, 131, 131, 0.1);
+
+  & > div {
+    padding: 2.5rem;
+  }
+}
+
+div.community {
+  background-color: $white;
+  grid-column: 1 / -1;
+  padding-bottom: 3rem;
+
+  h1 {
+    font-size: 1.5rem;
+    color: $cyan;
+    margin-bottom: 30px;
+  }
+
+  span {
+    display: block;
+    color: $yellow;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $grayish-blue;
+  }
+
+  p + p {
+    margin-top: 0.5rem;
+  }
+}
+
+.h2-title {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+  color: $white;
+}
+
+.subscription {
+  background-color: $cyan;
+  color: $white;
+
+  &__value {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-right: 0.75rem;
+    }
+
+    p {
+      color: $light-gray;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+  }
+
+  & > p {
+    margin-bottom: 1.75rem;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: $yellow;
+    color: $white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: $yellow-hover;
+    }
+  }
+}
+
+.why-us {
+  background-color: $cyan-light;
+
+  &__item {
+    color: $white;
+    opacity: 0.7;
+    font-size: 0.875rem;
+
+    & + & {
+      margin-top: 0.25rem;
+    }
+  }
 }
